@@ -1,0 +1,119 @@
+ar userChoice = prompt("Do you choose rock, paper or scissors?");
+
+/* 01 Extra task solved with the below while loop :What if a user makes an inappropriate choice like 'dog'? How can we extend the function to handle that?
+Additionally I implemented rope as a possible item to be choosen for the player to work in the while loop for task 02 too
+*/
+while (userChoice != "paper" && userChoice != "scissors" && userChoice != "rock" && userChoice != "rope"){
+    
+    userChoice = prompt("Please select a valid item to play :rock, paper, rope or scissors")
+    
+    } 
+
+/*02 - What if players in the game could also choose Rope in this game? Extra task implemented to give also to the computer the possibility to choose rope as extra option in the game*/
+
+var computerChoice = Math.random();
+if (computerChoice < 0.34) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+} else if(computerChoice <= 0.80) {
+	computerChoice = "rope";
+}else {
+	computerChoice = "scissors";
+} console.log("Computer: " + computerChoice);
+
+var compare = function(choice1,choice2){
+/*03 task - In this version, if both players make the same choice, the game returns a tie. What if the game didn't end there but instead asked both players for new choices?*/
+    if(choice1===choice2){
+        
+        var userChoice = prompt ("The result is a tie!Please play again");
+        var computerChoice = Math.random();
+        if (computerChoice < 0.34) {
+        	computerChoice = "rock";
+        } else if(computerChoice <= 0.67) {
+        	computerChoice = "paper";
+        } else if(computerChoice <= 0.80) {
+        	computerChoice = "rope";
+        }else {
+        	computerChoice = "scissors";
+        } console.log("Computer: " + computerChoice);
+                };
+            
+    
+     if(choice1==="rock"){
+        
+        if(choice2=== "scissors"){
+            
+            return "rock wins";
+            
+            }
+        else if(choice2==="rope"){
+                return "rope loses";
+                }
+        else{
+            
+            return "paper wins";
+            
+            }
+        }
+        
+    else if (choice1 === "paper"){
+        
+        if(choice2 === "rock"){
+            
+            return "paper wins";
+            }
+        else if(choice2==="rope"){
+                return "rope wins";
+                }
+                
+            
+        else{
+            
+            return "scissors wins";
+            
+            }
+        
+        }
+        else if (choice1 === "rope"){
+        
+        if(choice2 === "rock"){
+            
+            return "rope loses";
+            }
+        else if(choice2==="scissors"){
+                return "scissors wins";
+                }
+                
+            
+        else{
+            
+            return "rope wins";
+            
+            }
+        
+        }
+    else if (choice1 === "scissors"){
+        
+        if(choice2 === "rock"){
+            
+            return "scissors loses";
+            }
+        else if(choice2==="rope"){
+                return "scissors wins";
+                }
+                
+            
+        else{
+            
+            return "scissors wins";
+            
+            }
+        
+        }
+    
+    
+    
+    }
+    compare (userChoice,computerChoice);
+    
